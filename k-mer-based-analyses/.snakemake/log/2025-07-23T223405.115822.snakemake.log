@@ -1,0 +1,73 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: compute-0-9.local
+Building DAG of jobs...
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job kmc because of missing output required by all.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Need to rerun job all because job kmc has to be rerun.
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2165, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/api.py", line 603, in execute_workflow
+    workflow.execute(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    with self.persistence.lock():
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 211, in lock
+    raise snakemake.exceptions.LockException()
+snakemake.exceptions.LockException: Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.
+
+LockException:
+Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.

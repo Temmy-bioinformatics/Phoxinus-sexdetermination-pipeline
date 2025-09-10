@@ -1,0 +1,82 @@
+# config.yaml
+
+# --------------------
+# PATHS (Customize these for your system/environment)
+# --------------------
+
+
+# Directory with source FASTQ file lists
+SOURCE_DIRECTORY: "/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/fastq_files"
+
+# Main project directory to store all outputs/results
+PROJECT_DIR: "/share/pool/toriowo/Resources/Sex_Determination/kmerGwas/results"
+
+# Directory where all kmerGWAS tool binaries/scripts are located
+TOOLS_DIR: "/home/toriowo/Tools/kmerGWAS/bin"
+
+# Directory containing phenotype files (adjust to your phenotype data location)
+PHENO_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/resources/pheno_files"
+
+# Reference genome FASTA file (ensure this matches your species/reference)
+REFERENCE: "/path/to/reference/genome.fasta"
+
+# Path to kmersGWAS binary folder (adjust based on installation)
+KMERS_GWAS_BIN: "/home/toriowo/Tools/kmerGWAS/bin"
+
+# --------------------
+# PARAMETERS (Customize based on your dataset & experiment)
+# --------------------
+
+# Species label/name - used in outputs & logging
+SPECIES: "RhinePhoxinus"
+
+# Number of CPU threads to use for parallel execution (adjust for your machine)
+THREADS: 8  # e.g., set to 16 for high performance server, or 4 for local laptop
+
+# Kmer length - typical values are 21, 25, 31, etc. (odd numbers recommended)
+KMER_LENGTH: 31
+
+# Minimum Allele Count (MAC) - filter kmers seen less than this
+MAC: 5
+
+# Minor Allele Frequency (MAF) filter for kmers (range 0-1)
+MAF: 0.05
+
+# Block size (bp) - used to split genome or data for parallelization
+BLOCK_SIZE: 1000000000  # adjust smaller if memory limited
+
+# --------------------
+# ANALYSIS STEPS - toggle which steps to run (true/false)
+# --------------------
+
+# Prepare input files (filtering, formatting)
+RUN_FILES_PREP: false
+
+# Run kmer counting (KMC or other tools)
+RUN_KMC: true
+
+# Extract strand information of kmers (if applicable)
+RUN_STRAND_INFO: false
+
+# Generate list of kmers for analysis
+RUN_LIST_KMERS: false
+
+# Calculate kinship/relatedness matrix among samples
+RUN_KINSHIP_TABLE: false
+
+# Perform kmer-based Genome-Wide Association Study (GWAS)
+RUN_KMER_GWAS: false
+
+# Run BLAST to annotate significant kmers
+RUN_BLAST_KMERS: false
+
+# --------------------
+# OPTIONAL: User overrides section
+# --------------------
+# Use this section to override any defaults without editing above.
+# Uncomment and edit to customize on the fly.
+#
+# THREADS: 12
+# SPECIES: "AnotherSpecies"
+# RUN_KMER_GWAS: true
+#

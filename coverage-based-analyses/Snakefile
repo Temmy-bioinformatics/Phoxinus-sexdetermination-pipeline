@@ -1,0 +1,81 @@
+import sys
+import os
+
+# Load configuration file
+configfile: "config.yaml"
+
+# Define toggles to control which modules run (default: True if not in config)
+RUN_SAMTOOLS_STATS = config.get("RUN_SAMTOOLS_STATS", True)
+RUN_MULTIQC        = config.get("RUN_MULTIQC", True)
+RUN_MERGE_BAMS     = config.get("RUN_MERGE_BAMS", True)
+RUN_COV_STATS      = config.get("RUN_COV_STATS", True)
+RUN_DIFCOVER       = config.get("RUN_DIFCOVER", True)
+RUN_DNACOPY        = config.get("RUN_DNACOPY", True)
+
+# Species list (string or list)
+species_list = config.get("SPECIES")
+if isinstance(species_list, str):
+    species_list = [species_list]
+
+# Sex categories for rules that need them
+sexes = ["Male", "Female"]
+
+# Include module Snakefiles based on toggles
+if RUN_SAMTOOLS_STATS:
+    include: "rules/01-samtools.smk"
+if RUN_MULTIQC:
+    include: "rules/02-multiqc.smk"
+if RUN_MERGE_BAMS:
+    include: "rules/03-merge-bams.smk"
+if RUN_COV_STATS:
+    include: "rules/04-cov-stats.smk"
+if RUN_DIFCOVER:
+    include: "rules/05-difcover.smk"
+if RUN_DNACOPY:
+    include: "rules/06-dnacopy.smk"
+
+# Collect final outputs based on toggles
+final_outputs = []
+
+if RUN_SAMTOOLS_STATS:
+    final_outputs += expand(
+        os.path.join(config["OUTPUT_DIR"], "samtools_stats/{species}/{sex}"),
+        species=species_list,
+        sex=sexes
+    )
+
+if RUN_MULTIQC:
+    final_outputs += expand(
+        os.path.join(config["OUTPUT_DIR"], "Results/multiqc/{species}_multiqc_report.html"),
+        species=species_list
+    )
+
+if RUN_MERGE_BAMS:
+    final_outputs += expand(
+        os.path.join(config["MERGED_BAM_DIR"], "{species}", "{species}_{sex}_merged.bam"),
+        species=species_list,
+        sex=sexes
+    )
+
+if RUN_COV_STATS:
+    final_outputs += expand(
+        os.path.join(config["OUTPUT_DIR"], "cov_stats/{species}/cov_stats_{species}.tab"),
+        species=species_list
+    )
+
+if RUN_DIFCOVER:
+    final_outputs += expand(
+        os.path.join(config["OUTPUT_DIR"], "difcover/{species}/sample1_sample2.ratio_per_w_CC0.txt"),
+        species=species_list
+    )
+
+if RUN_DNACOPY:
+    final_outputs += expand(
+        os.path.join(config["OUTPUT_DIR"], "dnacopy/{species}/sample1_sample2.ratio_per_w_CC0.log2adj.txt"),
+        species=species_list
+    )
+
+# Aggregate final targets
+rule all:
+    input:
+        final_outputs

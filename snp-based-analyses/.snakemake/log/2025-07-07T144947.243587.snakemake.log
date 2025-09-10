@@ -1,0 +1,3 @@
+WorkflowErrorin line 6 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
+Workflow defines configfile /home/toriowo/.conda/envs/snakemake/lib/python3.10/site-packages/snakemake/config/config.yaml but it is not present or accessible.
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 6, in <module>

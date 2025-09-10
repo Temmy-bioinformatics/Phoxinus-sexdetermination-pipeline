@@ -1,0 +1,33 @@
+name: r_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.3
+  - r-tidyverse
+  - r-data.table
+  - r-ggplot2
+  - r-reshape2
+  - r-cowplot
+  - r-viridis
+  - r-gridextra
+  - r-patchwork
+  - r-scales
+  - r-argparser
+  - r-ggrepel
+  - r-optparse
+  - r-rcolorbrewer
+  - r-dplyr
+  - r-readr
+  - r-stringr
+  - r-magrittr
+  - r-ape
+  - r-ggridges
+  - r-ggpubr
+  - r-rlang
+  - r-tibble
+  - r-glue
+  - r-hms
+  - r-forcats
+  - r-lattice

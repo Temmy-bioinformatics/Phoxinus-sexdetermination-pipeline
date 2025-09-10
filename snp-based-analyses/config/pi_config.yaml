@@ -1,0 +1,21 @@
+# Root project directory (optional, can be used for absolute referencing)
+PROJECT_DIR: "/home/toriowo/Snakemake_projects/phoxinus_sex_determination"
+
+# Directory containing per-species BCF files
+BCF_DIR: "/home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results"
+
+# Directory containing *.vcflist sample lists
+SAMPLE_DIR: "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/resources/sample_lists"
+
+# List of all vcflist files used in this analysis
+VCF_LISTS:
+  - RhinePhoxinus_Male.vcflist
+  - RhinePhoxinus_Female.vcflist
+  - DanubeCsikii_Male.vcflist
+  - DanubeCsikii_Female.vcflist
+
+# Output directory for nucleotide diversity results
+OUTPUT_BASE_DIR: "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/results"
+
+# Number of threads to use
+THREADS: 4

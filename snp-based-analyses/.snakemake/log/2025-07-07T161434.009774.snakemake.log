@@ -1,0 +1,4 @@
+KeyErrorin line 4 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/01-fst.smk:
+'SAMPLE_LIST_DIR'
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 58, in <module>
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/01-fst.smk", line 4, in <module>

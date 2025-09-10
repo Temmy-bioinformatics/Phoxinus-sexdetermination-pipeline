@@ -1,0 +1,7 @@
+name: DEEPTOOLS_ENV
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.8
+  - deeptools

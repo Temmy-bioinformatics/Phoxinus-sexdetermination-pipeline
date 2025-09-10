@@ -1,0 +1,50 @@
+#####################################
+# GLOBAL PARAMETERS
+#####################################
+PROJECT_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses"
+OUTPUT_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results"
+THREADS: 4
+
+#####################################
+# ANALYSIS FLAGS
+#####################################
+RUN_FST: false
+RUN_NUC_DIV: false
+RUN_EXTRACT_BCF: false
+RUN_SNP_DENSITY: false
+RUN_SNP_GWAS: true
+RUN_PLOTTING: false
+
+
+#####################################
+# SPECIES AND SAMPLE INFO
+#####################################
+SPECIES:
+#  - RhinePhoxinus
+  - DanubeCsikii
+
+SAMPLE_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists"
+
+VCF_LISTS:
+  - RhinePhoxinus_Male.vcflist
+  - RhinePhoxinus_Female.vcflist
+  - DanubeCsikii_Male.vcflist
+  - DanubeCsikii_Female.vcflist
+
+#####################################
+# SNP/BCF ANALYSIS SETTINGS
+#####################################
+BCF_DIR: "/home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results"
+
+INDV_BCF_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf"
+#####################################
+# KMER GWAS PARAMETERS
+#####################################
+FASTQ_DIRECTORY: "/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Fastq_Files_List"
+TOOLS_DIR: "/share/pool/CompGenomVert/Applications/kmersGWAS/bin"
+KMER_LENGTH: 31
+MAC: 2
+MAF: 0.05
+BLOCK_SIZE: 10000
+PHENO_DIR: "/home/toriowo/SNAKEMAKE/SexDetermination_snakemake/data/pheno_files"
+REFERENCE: "/home/toriowo/Projects/Phoxy_popgen/Final_Phoxy_1_rearranged.fasta"

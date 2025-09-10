@@ -1,0 +1,4 @@
+KeyErrorin line 4 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/04-snp-gwas.smk:
+'INPUT_VCF_DIR'
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 64, in <module>
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/04-snp-gwas.smk", line 4, in <module>

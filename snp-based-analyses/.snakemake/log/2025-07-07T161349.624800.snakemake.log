@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule all in line 135 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
+Missing input files for rule all:
+    affected files:
+        results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst
+        results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst
+        results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst
+        results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst

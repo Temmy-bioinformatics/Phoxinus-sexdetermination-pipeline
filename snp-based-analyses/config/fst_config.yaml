@@ -1,0 +1,9 @@
+# Directory containing *.vcflist files for each species
+SAMPLE_LIST_DIR: "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/resources/sample_lists"
+
+# Directory containing BCF files for all species
+#BCF_DIR: "resources/bcf_files"
+BCF_DIR: "/home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results"
+
+# Directory to write final FST results
+OUTPUT_DIR: "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/results/fst"

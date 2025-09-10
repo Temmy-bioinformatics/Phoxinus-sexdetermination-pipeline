@@ -1,0 +1,5 @@
+Building DAG of jobs...
+Relative file path './resources/sample_lists/RhinePhoxinus_Male.vcflist' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './resources/sample_lists/RhinePhoxinus_Female.vcflist' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './resources/sample_lists/DanubeCsikii_Male.vcflist' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './resources/sample_lists/DanubeCsikii_Female.vcflist' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.

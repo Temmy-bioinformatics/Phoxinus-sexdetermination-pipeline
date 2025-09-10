@@ -1,0 +1,208 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: compute-0-3.local
+Building DAG of jobs...
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2165, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/api.py", line 603, in execute_workflow
+    workflow.execute(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1242, in execute
+    self._build_dag()
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1188, in _build_dag
+    async_run(self.dag.init())
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/common/__init__.py", line 99, in async_run
+    return asyncio.run(coroutine)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 222, in init
+    job = await self.update([job], progress=progress, create_inventory=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 1177, in update
+    raise exceptions[0]
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 1120, in update
+    await self.update_(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 1316, in update_
+    raise MissingInputException(job, missing_input)
+snakemake.exceptions.MissingInputException: Missing input files for rule all:
+    affected files:
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66046_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Suelz_ZFMK-TIS-66172_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-65414_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66620_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66030.bcf
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66629.bcf
+        results/snpdensity/RhinePhoxinus/Female_Suelz_ZFMK-TIS-66201_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-65499_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65487_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Naafbach_ZFMK-TIS-66058.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66622_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66030_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66094_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-66336_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Neckar_ZFMK-TIS-80585_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66623_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66114_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Suelz_ZFMK-TIS-66168.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66363.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM37.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Anger_ZFMK-TIS-80142.bcf
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer-AM41_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66628_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Mouzon_ZFMK-TIS-80150_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Mouzon_ZFMK-TIS-80148.bcf
+        results/snpdensity/RhinePhoxinus/Female_Naafbach_ZFMK-TIS-66031_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Naafbach_ZFMK-TIS-66058_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66619.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Anger_ZFMK-TIS-80124.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Anger_ZFMK-TIS-80125.bcf
+        results/snpdensity/RhinePhoxinus/Female_Anger_ZFMK-TIS-80124_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66047_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-66086_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66628.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-65499.bcf
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM45_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Suelz_ZFMK-TIS-66168_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer_AM39.bcf
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+        results/snpdensity/DanubeCsikii/Female_Neckar_ZFMK-TIS-80581_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66100_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Suelz_ZFMK-TIS-66172.bcf
+        results/snpdensity/RhinePhoxinus/Female_Anger_ZFMK-TIS-80125_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Mouzon_ZFMK-TIS-80150.bcf
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66624.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66047.bcf
+        results/individual_bcf/DanubeCsikii/Male/Neckar_ZFMK-TIS-80585.bcf
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM37_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66357.bcf
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66357_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+        results/snpdensity/RhinePhoxinus/Male_Mouzon_ZFMK-TIS-80148_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Anger_ZFMK-TIS-80141.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM46.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-66086.bcf
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66623.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Naafbach_ZFMK-TIS-66031.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-66336.bcf
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66626_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65486.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66619_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM46_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66094.bcf
+        results/snpdensity/RhinePhoxinus/Male_Anger_ZFMK-TIS-80142_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66624_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer-AM42_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66046.bcf
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66363_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65468.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65486_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66100.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-65414.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65468_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66629_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66114.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Suelz_ZFMK-TIS-66201.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65487.bcf
+        results/snpdensity/RhinePhoxinus/Male_Anger_ZFMK-TIS-80141_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer_AM39_10k.snpden
+
+MissingInputException in rule all in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/Snakefile", line 133:
+Missing input files for rule all:
+    affected files:
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66046_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Suelz_ZFMK-TIS-66172_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-65414_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66620_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66030.bcf
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66629.bcf
+        results/snpdensity/RhinePhoxinus/Female_Suelz_ZFMK-TIS-66201_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-65499_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65487_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Naafbach_ZFMK-TIS-66058.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66622_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66030_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66094_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-66336_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Neckar_ZFMK-TIS-80585_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66623_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66114_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Suelz_ZFMK-TIS-66168.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66363.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM37.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Anger_ZFMK-TIS-80142.bcf
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer-AM41_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66628_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Mouzon_ZFMK-TIS-80150_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Mouzon_ZFMK-TIS-80148.bcf
+        results/snpdensity/RhinePhoxinus/Female_Naafbach_ZFMK-TIS-66031_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Naafbach_ZFMK-TIS-66058_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66619.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Anger_ZFMK-TIS-80124.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Anger_ZFMK-TIS-80125.bcf
+        results/snpdensity/RhinePhoxinus/Female_Anger_ZFMK-TIS-80124_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Naafbach_ZFMK-TIS-66047_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-66086_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66628.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-65499.bcf
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM45_10k.snpden
+        results/snpdensity/RhinePhoxinus/Male_Suelz_ZFMK-TIS-66168_10k.snpden
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer_AM39.bcf
+        results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+        results/snpdensity/DanubeCsikii/Female_Neckar_ZFMK-TIS-80581_10k.snpden
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66100_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Suelz_ZFMK-TIS-66172.bcf
+        results/snpdensity/RhinePhoxinus/Female_Anger_ZFMK-TIS-80125_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Mouzon_ZFMK-TIS-80150.bcf
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66624.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66047.bcf
+        results/individual_bcf/DanubeCsikii/Male/Neckar_ZFMK-TIS-80585.bcf
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM37_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66357.bcf
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66357_10k.snpden
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+        results/snpdensity/RhinePhoxinus/Male_Mouzon_ZFMK-TIS-80148_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Anger_ZFMK-TIS-80141.bcf
+        results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM46.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-66086.bcf
+        results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66623.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Naafbach_ZFMK-TIS-66031.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-66336.bcf
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66626_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65486.bcf
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66619_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Main_Lauer-AM46_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66094.bcf
+        results/snpdensity/RhinePhoxinus/Male_Anger_ZFMK-TIS-80142_10k.snpden
+        results/snpdensity/DanubeCsikii/Female_Danube_ZFMK-TIS-66624_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer-AM42_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Naafbach_ZFMK-TIS-66046.bcf
+        results/snpdensity/RhinePhoxinus/Female_Agger_ZFMK-TIS-66363_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65468.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65486_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66100.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-65414.bcf
+        results/snpdensity/RhinePhoxinus/Male_Agger_ZFMK-TIS-65468_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Danube_ZFMK-TIS-66629_10k.snpden
+        results/individual_bcf/RhinePhoxinus/Female/Agger_ZFMK-TIS-66114.bcf
+        results/individual_bcf/RhinePhoxinus/Female/Suelz_ZFMK-TIS-66201.bcf
+        results/individual_bcf/RhinePhoxinus/Male/Agger_ZFMK-TIS-65487.bcf
+        results/snpdensity/RhinePhoxinus/Male_Anger_ZFMK-TIS-80141_10k.snpden
+        results/snpdensity/DanubeCsikii/Male_Main_Lauer_AM39_10k.snpden

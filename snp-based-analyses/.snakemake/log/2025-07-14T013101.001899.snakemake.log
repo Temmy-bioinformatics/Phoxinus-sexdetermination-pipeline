@@ -1,0 +1,125 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: compute-0-1.local
+Building DAG of jobs...
+Need to rerun job run_fst_10k_windows because of missing output required by all.
+Need to rerun job run_fst_10k_windows because of missing output required by all.
+Need to rerun job run_fst because of missing output required by all.
+Need to rerun job run_fst because of missing output required by all.
+Need to rerun job all because job run_fst_10k_windows has to be rerun.
+Need to rerun job all because job run_fst_10k_windows has to be rerun.
+Need to rerun job all because job run_fst has to be rerun.
+Need to rerun job all because job run_fst has to be rerun.
+results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst: True 0
+results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst: True 0
+: False 4
+results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst: True 0
+results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst: True 0
+shared_storage_local_copies: True
+remote_exec: False
+Submitting maximum 100 job(s) over 1.0 second(s).
+Using shell: /bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+all                        1
+run_fst                    2
+run_fst_10k_windows        2
+total                      5
+
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807, '_job_count': 9223372036854775807}
+Ready jobs: 4
+Select jobs to execute...
+Selected jobs: 4
+Resources after job selection: {'_cores': 6, '_nodes': 9223372036854775803, '_job_count': 100}
+Execute 4 jobs...
+[Mon Jul 14 01:31:01 2025]
+localrule run_fst_10k_windows:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Male.vcflist, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Female.vcflist
+    output: results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst
+    jobid: 2
+    reason: Missing output files: results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst
+    wildcards: species=DanubeCsikii
+    resources: tmpdir=/tmp/1974087.1.medium.q
+Shell command: 
+        mkdir -p $(dirname results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst)
+        vcftools --bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Male.vcflist                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Female.vcflist                  --fst-window-size 10000                  --out results/fst/DanubeCsikii/DanubeCsikii_Fst_10k
+        
+[Mon Jul 14 01:31:01 2025]
+localrule run_fst_10k_windows:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/RhinePhoxinus/Filtered/RhinePhoxinus_allChromosomes.filtered.norm.bcf, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Male.vcflist, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Female.vcflist
+    output: results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst
+    jobid: 1
+    reason: Missing output files: results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst
+    wildcards: species=RhinePhoxinus
+    resources: tmpdir=/tmp/1974087.1.medium.q
+Shell command: 
+        mkdir -p $(dirname results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst)
+        vcftools --bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/RhinePhoxinus/Filtered/RhinePhoxinus_allChromosomes.filtered.norm.bcf                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Male.vcflist                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Female.vcflist                  --fst-window-size 10000                  --out results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k
+        
+[Mon Jul 14 01:31:01 2025]
+localrule run_fst:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/RhinePhoxinus/Filtered/RhinePhoxinus_allChromosomes.filtered.norm.bcf, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Male.vcflist, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Female.vcflist
+    output: results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst
+    jobid: 3
+    reason: Missing output files: results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst
+    wildcards: species=RhinePhoxinus
+    resources: tmpdir=/tmp/1974087.1.medium.q
+Shell command: 
+        mkdir -p $(dirname results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst)
+        vcftools --bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/RhinePhoxinus/Filtered/RhinePhoxinus_allChromosomes.filtered.norm.bcf                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Male.vcflist                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/RhinePhoxinus_Female.vcflist                  --out results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt
+        
+[Mon Jul 14 01:31:01 2025]
+localrule run_fst:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Male.vcflist, /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Female.vcflist
+    output: results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst
+    jobid: 4
+    reason: Missing output files: results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst
+    wildcards: species=DanubeCsikii
+    resources: tmpdir=/tmp/1974087.1.medium.q
+Shell command: 
+        mkdir -p $(dirname results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst)
+        vcftools --bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Male.vcflist                  --weir-fst-pop /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists/DanubeCsikii_Female.vcflist                  --out results/fst/DanubeCsikii/DanubeCsikii_Fst.txt
+        
+Waiting for running jobs to complete.
+[Mon Jul 14 01:32:45 2025]
+Finished jobid: 2 (Rule: run_fst_10k_windows)
+1 of 5 steps (20%) done
+: False 3
+[Mon Jul 14 01:33:37 2025]
+Finished jobid: 4 (Rule: run_fst)
+2 of 5 steps (40%) done
+: False 2
+[Mon Jul 14 01:33:59 2025]
+Finished jobid: 1 (Rule: run_fst_10k_windows)
+3 of 5 steps (60%) done
+: False 1
+[Mon Jul 14 01:35:29 2025]
+Finished jobid: 3 (Rule: run_fst)
+4 of 5 steps (80%) done
+: True 0
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775807, '_job_count': 100}
+Ready jobs: 1
+Select jobs to execute...
+Selecting jobs to run using greedy solver.
+Selected jobs: 1
+Resources after job selection: {'_cores': 9, '_nodes': 9223372036854775806, '_job_count': 100}
+Execute 1 jobs...
+[Mon Jul 14 01:35:29 2025]
+localrule all:
+    input: results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst, results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst, results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst, results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst
+    jobid: 0
+    reason: Input files updated by another job: results/fst/DanubeCsikii/DanubeCsikii_Fst.txt.weir.fst, results/fst/RhinePhoxinus/RhinePhoxinus_Fst_10k.windowed.weir.fst, results/fst/RhinePhoxinus/RhinePhoxinus_Fst.txt.weir.fst, results/fst/DanubeCsikii/DanubeCsikii_Fst_10k.windowed.weir.fst
+    resources: tmpdir=/tmp/1974087.1.medium.q
+Shell command: None
+Waiting for running jobs to complete.
+[Mon Jul 14 01:35:29 2025]
+Finished jobid: 0 (Rule: all)
+5 of 5 steps (100%) done
+Complete log(s): /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/.snakemake/log/2025-07-14T013101.001899.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

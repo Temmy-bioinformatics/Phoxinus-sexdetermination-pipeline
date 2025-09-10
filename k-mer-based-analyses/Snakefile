@@ -1,0 +1,99 @@
+# master.smk
+
+import sys
+import os
+
+# Load config
+configfile: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/config/config.yaml"
+
+# Species list (allow single species or list)
+species_list = config.get("SPECIES")
+if isinstance(species_list, str):
+    species_list = [species_list]
+
+# Gender list, adjust if needed
+genders = ["Male", "Female"]
+
+# REFERENCE PATH
+reference = config["REFERENCE"]
+
+# Example sample directory, adjust your config accordingly
+SOURCE_DIRECTORY = config["SOURCE_DIRECTORY"]
+
+# Load toggles from config or set defaults here
+RUN_FILES_PREP = config.get("RUN_FILES_PREP", False)
+RUN_KMC = config.get("RUN_KMC", False)
+RUN_STRAND_INFO = config.get("RUN_STRAND_INFO", False)
+RUN_LIST_KMERS = config.get("RUN_LIST_KMERS", False)
+RUN_KINSHIP_TABLE = config.get("RUN_KINSHIP_TABLE", False)
+RUN_KMER_GWAS = config.get("RUN_KMER_GWAS", False)
+RUN_BLAST_KMERS = config.get("RUN_BLAST_KMERS", False)
+
+print("Active modules:", file=sys.stderr)
+print(f"Files Prep: {RUN_FILES_PREP}, KMC: {RUN_KMC}, Strand Info: {RUN_STRAND_INFO}, List kmers: {RUN_LIST_KMERS}, "
+      f"Kinship: {RUN_KINSHIP_TABLE}, GWAS: {RUN_KMER_GWAS}, Blast: {RUN_BLAST_KMERS}", file=sys.stderr)
+
+# Include snakefiles conditionally
+if RUN_FILES_PREP:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/01_files_prep.smk"
+if RUN_KMC:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/02_kmc.smk"
+if RUN_STRAND_INFO:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/03_strand_info.smk"
+if RUN_LIST_KMERS:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/04_list_kmers.smk"
+if RUN_KINSHIP_TABLE:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/05_kinship_table.smk"
+if RUN_KMER_GWAS:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/06_kmer_gwas.smk"
+if RUN_BLAST_KMERS:
+    include: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/k-mer-based-analyses/workflow/rules/07_blast_kmers.smk"
+
+# Example: dynamically gather sample names (simplified version)
+def get_samples():
+    samples = []
+    for gender in genders:
+        gender_path = os.path.join(SOURCE_DIRECTORY, species_list[0], gender)
+        if os.path.exists(gender_path):
+            # List files ending with _1.fq.gz and strip suffix to get sample names
+            fq_files = [f for f in os.listdir(gender_path) if f.endswith("_1.fq.gz")]
+            samples.extend([f.replace("_1.fq.gz", "") for f in fq_files])
+    return list(set(samples))
+
+SAMPLES = get_samples()
+
+# Compose final outputs per module (adjust paths/output files per your snakefiles)
+
+final_outputs = []
+
+if RUN_FILES_PREP:
+    final_outputs += expand(f"{config['PROJECT_DIR']}/{species_list[0]}/{{sample}}/{{sample}}_1.fq.gz", sample=SAMPLES)
+    final_outputs += expand(f"{config['PROJECT_DIR']}/{species_list[0]}/{{sample}}/{{sample}}_2.fq.gz", sample=SAMPLES)
+
+if RUN_KMC:
+    final_outputs += expand(f"{config['PROJECT_DIR']}/{species_list[0]}/{{sample}}/output_kmc_canon.kmc_pre", sample=SAMPLES)
+    final_outputs += expand(f"{config['PROJECT_DIR']}/{species_list[0]}/{{sample}}/output_kmc_all.kmc_pre", sample=SAMPLES)
+
+if RUN_STRAND_INFO:
+    final_outputs += expand(f"{config['PROJECT_DIR']}/{species_list[0]}/{{sample}}/kmers_with_strand", sample=SAMPLES)
+
+if RUN_LIST_KMERS:
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/kmers_list_paths_final.txt")
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/dirlist.txt")
+
+if RUN_KINSHIP_TABLE:
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/kmers_table.table")
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/kmers_table.kinship")
+
+if RUN_KMER_GWAS:
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/kmers.assoc")
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/kmers.assoc.tab")
+
+if RUN_BLAST_KMERS:
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/top001/top0.01perc_assoc.tab")
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/top001/most_assoc_kmers.list")
+    final_outputs.append(f"{config['PROJECT_DIR']}/{species_list[0]}/top001/blast/kmers_blast.out")
+
+rule all:
+    input:
+        final_outputs

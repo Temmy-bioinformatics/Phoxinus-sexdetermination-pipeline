@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Creating conda environment workflow/envs/fst_env.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/envs/fst_env.yaml:
+Command:
+conda env create --quiet --file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/.snakemake/conda/9b95644a3b700e55afb514dc74702165_.yaml" --prefix "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/.snakemake/conda/9b95644a3b700e55afb514dc74702165_"
+Output:
+Collecting package metadata (repodata.json): ...working... failed
+
+CondaSSLError: Encountered an SSL error. Most likely a certificate verification issue.
+
+Exception: HTTPSConnectionPool(host='repo.anaconda.com', port=443): Max retries exceeded with url: /pkgs/main/linux-64/repodata.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+
+

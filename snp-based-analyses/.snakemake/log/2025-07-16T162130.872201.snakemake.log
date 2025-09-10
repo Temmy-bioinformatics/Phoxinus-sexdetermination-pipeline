@@ -1,0 +1,482 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: compute-0-1.local
+Building DAG of jobs...
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_male because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job extract_individual_bcfs_female because of missing output required by all.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_male has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+Need to rerun job all because job extract_individual_bcfs_female has to be rerun.
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf: True 0
+: False 16
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66624.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM46.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66619.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Neckar_ZFMK-TIS-80585.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66628.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM37.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer_AM39.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66623.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf: True 0
+/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66629.bcf: True 0
+shared_storage_local_copies: True
+remote_exec: False
+Submitting maximum 100 job(s) over 1.0 second(s).
+Using shell: /bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                               count
+------------------------------  -------
+all                                   1
+extract_individual_bcfs_female        8
+extract_individual_bcfs_male          8
+total                                17
+
+Resources before job selection: {'_cores': 30, '_nodes': 9223372036854775807, '_job_count': 9223372036854775807}
+Ready jobs: 16
+Select jobs to execute...
+Selected jobs: 7
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775800, '_job_count': 100}
+Execute 7 jobs...
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_female:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf
+    jobid: 13
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf
+    wildcards: species=DanubeCsikii, sample=Danube_ZFMK-TIS-66620
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf)
+        bcftools view -a -s Danube_ZFMK-TIS-66620 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66620.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_female:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+    jobid: 11
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+    wildcards: species=DanubeCsikii, sample=Main_Lauer-AM45
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_male:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+    jobid: 6
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+    wildcards: species=DanubeCsikii, sample=Main_Lauer-AM41
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_female:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf
+    jobid: 16
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf
+    wildcards: species=DanubeCsikii, sample=Danube_ZFMK-TIS-66626
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf)
+        bcftools view -a -s Danube_ZFMK-TIS-66626 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Danube_ZFMK-TIS-66626.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_male:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+    jobid: 7
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+    wildcards: species=DanubeCsikii, sample=Main_Lauer-AM42
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_male:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf
+    jobid: 2
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf
+    wildcards: species=DanubeCsikii, sample=Danube_ZFMK-TIS-66622
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf)
+        bcftools view -a -s Danube_ZFMK-TIS-66622 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Danube_ZFMK-TIS-66622.bcf
+        
+[Wed Jul 16 16:21:30 2025]
+localrule extract_individual_bcfs_female:
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+    jobid: 9
+    reason: Missing output files: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+    wildcards: species=DanubeCsikii, sample=Neckar_ZFMK-TIS-80581
+    threads: 4
+    resources: tmpdir=/tmp/1974428.1.medium.q
+Shell command: 
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+        
+Waiting for running jobs to complete.
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 89, in __rule_extract_individual_bcfs_female
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 89, in __rule_extract_individual_bcfs_female
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 461, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 51:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 51:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf' returned non-zero exit status 255.
+[Wed Jul 16 16:21:30 2025]
+Error in rule extract_individual_bcfs_female:
+    message: None
+    jobid: 11
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+        
+        (command exited with non-zero exit code)
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 57, in __rule_extract_individual_bcfs_male
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 57, in __rule_extract_individual_bcfs_male
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 461, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 38:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 57, in __rule_extract_individual_bcfs_male
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 38:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf' returned non-zero exit status 255.
+[Wed Jul 16 16:21:31 2025]
+Error in rule extract_individual_bcfs_male:
+    message: None
+    jobid: 6
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+        
+        (command exited with non-zero exit code)
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 57, in __rule_extract_individual_bcfs_male
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 461, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 38:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 89, in __rule_extract_individual_bcfs_female
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 38:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf' returned non-zero exit status 255.
+[Wed Jul 16 16:21:31 2025]
+Error in rule extract_individual_bcfs_male:
+    message: None
+    jobid: 7
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+        
+        (command exited with non-zero exit code)
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 425, in run_wrapper
+    run(
+  File "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 89, in __rule_extract_individual_bcfs_female
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 358, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 461, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 51:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/rules/03-extract-sample-bcf.smk", line 51:
+Command 'set -euo pipefail;  
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf' returned non-zero exit status 255.
+[Wed Jul 16 16:21:31 2025]
+Error in rule extract_individual_bcfs_female:
+    message: None
+    jobid: 9
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+        
+        (command exited with non-zero exit code)
+[Wed Jul 16 16:22:43 2025]
+Finished jobid: 16 (Rule: extract_individual_bcfs_female)
+1 of 17 steps (6%) done
+: False 15
+[Wed Jul 16 16:22:44 2025]
+Finished jobid: 2 (Rule: extract_individual_bcfs_male)
+2 of 17 steps (12%) done
+: False 14
+[Wed Jul 16 16:22:44 2025]
+Finished jobid: 13 (Rule: extract_individual_bcfs_female)
+3 of 17 steps (18%) done
+: False 13
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Wed Jul 16 16:22:44 2025]
+Error in rule extract_individual_bcfs_female:
+    message: None
+    jobid: 9
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf)
+        bcftools view -a -s Neckar_ZFMK-TIS-80581 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Neckar_ZFMK-TIS-80581.bcf
+        
+        (command exited with non-zero exit code)
+[Wed Jul 16 16:22:44 2025]
+Error in rule extract_individual_bcfs_male:
+    message: None
+    jobid: 7
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf)
+        bcftools view -a -s Main_Lauer-AM42 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM42.bcf
+        
+        (command exited with non-zero exit code)
+[Wed Jul 16 16:22:44 2025]
+Error in rule extract_individual_bcfs_female:
+    message: None
+    jobid: 11
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf)
+        bcftools view -a -s Main_Lauer-AM45 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Female/Main_Lauer-AM45.bcf
+        
+        (command exited with non-zero exit code)
+[Wed Jul 16 16:22:44 2025]
+Error in rule extract_individual_bcfs_male:
+    message: None
+    jobid: 6
+    input: /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+    output: /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+    shell:
+        
+        mkdir -p $(dirname /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf)
+        bcftools view -a -s Main_Lauer-AM41 --threads 4 -O b -o /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf /home/toriowo/SNAKEMAKE/Variant_calling_pipeline/haplome_one_results/DanubeCsikii/Filtered/DanubeCsikii_allChromosomes.filtered.norm.bcf
+        bcftools index /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results/individual_bcf/DanubeCsikii/Male/Main_Lauer-AM41.bcf
+        
+        (command exited with non-zero exit code)
+Complete log(s): /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/.snakemake/log/2025-07-16T162130.872201.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2165, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/api.py", line 603, in execute_workflow
+    workflow.execute(
+  File "/home/toriowo/.conda/envs/snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1451, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

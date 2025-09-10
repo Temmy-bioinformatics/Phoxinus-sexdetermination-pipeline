@@ -1,0 +1,4 @@
+KeyErrorin line 10 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/03-snp-density.smk:
+'SPECIES'
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 31, in <module>
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/03-snp-density.smk", line 10, in <module>

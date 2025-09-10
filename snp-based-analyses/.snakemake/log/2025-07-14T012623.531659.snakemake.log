@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Creating conda environment workflow/envs/fst_env.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/workflow/envs/fst_env.yaml:
+Command:
+conda env create --quiet --no-default-packages --file "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/conda_envs/595513e7ed5b7c06ada90d6a155d5e0d_.yaml" --prefix "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/conda_envs/595513e7ed5b7c06ada90d6a155d5e0d_"
+Output:
+Channels:
+ - bioconda
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... failed
+
+CondaHTTPError: HTTP 401 UNAUTHORIZED for url <https://repo.anaconda.com/pkgs/main/linux-64/repodata.json>
+Elapsed: 00:00.096913
+
+The credentials you have provided for this URL are invalid.
+
+You will need to modify your conda configuration to proceed.
+Use `conda config --show` to view your configuration's current state.
+Further configuration help can be found at <https://conda.io/docs/config.html>.
+
+
+

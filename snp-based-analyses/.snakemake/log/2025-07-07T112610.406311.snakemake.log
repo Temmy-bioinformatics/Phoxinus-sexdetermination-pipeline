@@ -1,0 +1,3 @@
+CreateRuleExceptionin line 54 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
+The name all is already used by another rule
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 54, in <module>

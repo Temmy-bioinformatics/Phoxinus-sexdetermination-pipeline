@@ -1,0 +1,4 @@
+WorkflowErrorin line 4 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/01-fst.smk:
+Workflow defines configfile ../config/fst_config.yaml but it is not present or accessible.
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 21, in <module>
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/01-fst.smk", line 4, in <module>

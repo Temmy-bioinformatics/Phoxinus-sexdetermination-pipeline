@@ -1,0 +1,4 @@
+SyntaxError:
+Only input files can be specified as functions
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 61, in <module>
+  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/05-kmer-prep.smk", line 40, in <module>

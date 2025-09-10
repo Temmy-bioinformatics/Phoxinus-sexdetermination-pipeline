@@ -1,0 +1,146 @@
+Sure! Here’s your polished **README** including the detailed explanation of your `config.yaml` with general paths and parameter meanings, ready for your repo:
+
+---
+
+# Kmer GWAS Pipeline
+
+This repository contains a modular **Snakemake** workflow for k-mer based Genome-Wide Association Studies (GWAS), tailored primarily for sex determination and related genomic analyses. The pipeline is split into multiple Snakefiles, each responsible for a specific step, and controlled by toggles in the configuration file.
+
+---
+
+## Table of Contents
+
+* [Features](#features)
+* [Pipeline Overview](#pipeline-overview)
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [Running the Pipeline](#running-the-pipeline)
+* [Modules](#modules)
+* [Outputs](#outputs)
+* [Notes](#notes)
+
+---
+
+## Features
+
+* Modular Snakefiles for clean, maintainable workflows
+* Toggle each module (e.g., KMC counting, kinship calculation, GWAS, BLAST) on/off via config
+* Automatic sample discovery based on directory structure
+* Conda environment management for reproducibility
+* Comprehensive output organization and aggregation
+
+---
+
+## Pipeline Overview
+
+The pipeline consists of seven main modules:
+
+1. **Files Preparation:** Copy or format raw FASTQ files into project structure
+2. **KMC Counting:** Run k-mer counting using KMC tool
+3. **Strand Information:** Add strand information to k-mers
+4. **List Kmers:** Aggregate k-mer lists across samples
+5. **Kinship Table:** Calculate kinship matrices from k-mers
+6. **Kmer GWAS:** Run k-mer based GWAS with kinship correction
+7. **Blast Kmers:** BLAST significant kmers against reference genome for annotation
+
+Modules can be enabled or disabled independently via configuration.
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/kmer-gwas-pipeline.git
+   cd kmer-gwas-pipeline
+   ```
+
+2. Install [Snakemake](https://snakemake.readthedocs.io/en/stable/) (via conda or pip).
+
+3. Prepare conda environments as specified in the `envs/` directory.
+
+---
+
+## Configuration
+
+Edit `config.yaml` to customize paths, parameters, and module toggles.
+
+### Paths
+
+* **`SOURCE_DIRECTORY`**: Path to raw FASTQ files (paired-end).
+* **`PROJECT_DIR`**: Directory where results and intermediate files will be saved.
+* **`TOOLS_DIR`**: Location of tool binaries/scripts (e.g., kmerGWAS).
+* **`PHENO_DIR`**: Directory with phenotype files.
+* **`REFERENCE`**: Reference genome FASTA file path.
+* **`KMERS_GWAS_BIN`**: Specific path to `kmerGWAS` binaries.
+
+### Parameters
+
+* **`SPECIES`**: Species name or label used in output folders.
+* **`THREADS`**: Number of CPU threads for parallel execution.
+* **`KMER_LENGTH`**: Length of k-mers (odd numbers recommended, e.g., 31).
+* **`MAC`**: Minimum Allele Count filter for k-mers.
+* **`MAF`**: Minor Allele Frequency filter for k-mers (0–1).
+* **`BLOCK_SIZE`**: Size of genomic blocks to split data for parallel processing.
+
+### Module Toggles
+
+Set to `true` or `false` to enable or disable each pipeline step:
+
+* `RUN_FILES_PREP`
+* `RUN_KMC`
+* `RUN_STRAND_INFO`
+* `RUN_LIST_KMERS`
+* `RUN_KINSHIP_TABLE`
+* `RUN_KMER_GWAS`
+* `RUN_BLAST_KMERS`
+
+---
+
+## Running the Pipeline
+
+Run Snakemake with your desired number of cores:
+
+```bash
+snakemake --cores 16 --use-conda -s master.smk
+```
+
+Only the modules enabled in `config.yaml` will be executed.
+
+---
+
+## Modules
+
+| Module Name       | Snakefile              | Description                                   |
+| ----------------- | ---------------------- | --------------------------------------------- |
+| Files Preparation | `01_files_prep.smk`    | Copies raw FASTQ files into working directory |
+| KMC Counting      | `02_kmc.smk`           | Runs k-mer counting with KMC tool             |
+| Strand Info       | `03_strand_info.smk`   | Adds strand information to k-mers             |
+| List Kmers        | `04_list_kmers.smk`    | Aggregates k-mer lists across samples         |
+| Kinship Table     | `05_kinship_table.smk` | Calculates kinship matrix                     |
+| Kmer GWAS         | `06_kmer_gwas.smk`     | Runs GWAS with kinship correction             |
+| Blast Kmers       | `07_blast_kmers.smk`   | BLASTs significant kmers to reference         |
+
+---
+
+## Outputs
+
+Outputs are saved under `PROJECT_DIR` within species-specific folders, including:
+
+* Raw and processed FASTQ files
+* KMC k-mer count files (`*.kmc_pre`, `*.kmc_suf`)
+* Strand-annotated k-mers
+* K-mer lists and kinship matrices
+* GWAS association result files
+* BLAST annotation results for top significant k-mers
+
+---
+
+## Notes
+
+* Paired-end FASTQ files should be named consistently with `_1.fq.gz` and `_2.fq.gz` suffixes in the source directories.
+* Some intermediate steps (e.g., extracting top GWAS hits) may be run manually depending on your workflow.
+* Update paths and parameters in `config.yaml` to match your data and environment before running.
+* Ensure all conda environments specified in each Snakefile are properly installed and activated by Snakemake.
+
