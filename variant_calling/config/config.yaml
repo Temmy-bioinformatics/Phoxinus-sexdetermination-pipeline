@@ -1,0 +1,68 @@
+#########################################
+###### Sample-specific configuration ####
+#########################################
+
+
+# Optional pipeline stages, toggle between true and false to decide what part of the script to run
+RUN_CALLING: true
+RUN_SUBSAMPLE: true
+RUN_STATS: true
+RUN_FILTER: true
+
+# Sample or population name — used to construct all output paths
+SAMPLE_ID: "DanubeCsikii"
+
+# Reference genome (absolute or relative path)
+REFGENOME: "resources/reference/Final_Phoxy_2_rearranged.fasta"
+
+# Path to BAM file list (one path per line)
+BAM_LIST: "resources/lists/bamlists/{SAMPLE_ID}_bamfiles.list"
+
+# Base output directory — results will be saved under this path
+BASE_OUTPUT_DIR: "results/{SAMPLE_ID}"
+
+# Temporary working directory (use absolute path if on cluster)
+TEMPDIR: "/share/pool/toriowo/tmp"
+
+#########################################
+######### Resource specifications #######
+#########################################
+
+# Default threads and memory for most rules
+THREADS: 4
+MAXMEMORY: "40g"
+
+# BCFtools module (if using module systems)
+BCFTOOLS_MODULE: "bcftools/1.19"
+
+# Subsample size for final variants
+SUBSAMPLE_SIZE: 10000
+
+#########################################
+##### Variant filtering parameters ######
+#########################################
+
+# Filters — adjust based on dataset quality
+MAF: 0.05
+F_MISSING: 0.75
+QUAL: 30
+MIN_DEPTH: 3
+MAX_DEPTH: 30
+GENO: 0.9
+MIND: 0.75
+CHR_NUMBER: 25
+
+#########################################
+###### Derived file and path setup ######
+#########################################
+
+# This block will be parsed inside the Snakefiles using Python formatting
+DERIVED_PATHS:
+  WORKING_DIR: "{BASE_OUTPUT_DIR}"
+  FILTERED_DIR: "{BASE_OUTPUT_DIR}/Filtered"
+  INPUT_BCF: "{BASE_OUTPUT_DIR}/{SAMPLE_ID}_allChromosomes_merged.bcf"
+  FILTERED_BCF: "{BASE_OUTPUT_DIR}/{SAMPLE_ID}_allChromosomes_merged.bcf"
+  NORM_BCF: "{BASE_OUTPUT_DIR}/Filtered/{SAMPLE_ID}_allChromosomes.filtered.norm.bcf"
+  LD_PREFIX: "{BASE_OUTPUT_DIR}/Filtered/{SAMPLE_ID}_LD"
+  MAF_FILTERED_BED: "{BASE_OUTPUT_DIR}/Filtered/Plink/{SAMPLE_ID}_maf_Phoxinus"
+  MAF_FINAL_OUTPUT: "{BASE_OUTPUT_DIR}/Filtered/Plink/{SAMPLE_ID}_final_maf"

@@ -1,0 +1,73 @@
+#########################################
+########## CONFIG & SETUP ###############
+#########################################
+
+configfile: "config/{your_config_filename}.yaml"  # Update with your config
+
+SAMPLE = config["SAMPLE_ID"]
+THREADS = config["THREADS"]
+BASE_OUTPUT_DIR = config["BASE_OUTPUT_DIR"].format(SAMPLE_ID=SAMPLE)
+DERIVED = config["DERIVED_PATHS"]
+SUBSAMPLE_SIZE = config["SUBSAMPLE_SIZE"]
+
+# Chromosomes — manually defined, or load from indexed reference later
+Chrs = [f"Chr{i}" for i in range(1, 26)]
+
+# Pipeline toggle switches
+RUN_CALLING   = config.get("RUN_CALLING", True)
+RUN_SUBSAMPLE = config.get("RUN_SUBSAMPLE", True)
+RUN_STATS     = config.get("RUN_STATS", True)
+RUN_FILTER    = config.get("RUN_FILTER", True)
+
+#########################################
+############# MODULE INCLUDES ###########
+#########################################
+
+if RUN_CALLING:
+    include: "rules/01-bcftools-call-variants.smk"
+
+if RUN_SUBSAMPLE:
+    include: "rules/02-subsample-variants.smk"
+
+if RUN_STATS:
+    include: "rules/03-variant-stats.smk"
+
+if RUN_FILTER:
+    include: "rules/04-variant-filter.smk"
+
+#########################################
+############ RULE ALL ###################
+#########################################
+
+targets = []
+
+if RUN_CALLING:
+    SPLIT_DIR = f"{BASE_OUTPUT_DIR}/Split_Chrs"
+    OUTPUT_BCF = f"{BASE_OUTPUT_DIR}/{SAMPLE}_allChromosomes_merged.bcf"
+    targets += expand(f"{SPLIT_DIR}/{SAMPLE}_{{chr}}_merged.bcf", chr=Chrs)
+    targets.append(OUTPUT_BCF)
+
+if RUN_SUBSAMPLE:
+    SUBSAMPLED_VCF = f"{BASE_OUTPUT_DIR}/Subsample_vcf/Subsampled_{SUBSAMPLE_SIZE}.vcf"
+    targets.append(SUBSAMPLED_VCF)
+
+if RUN_STATS:
+    OUT_PREFIX = f"{BASE_OUTPUT_DIR}/Stats/{SAMPLE}"
+    PLOT_DIR = f"{BASE_OUTPUT_DIR}/Plots"
+    stats_outputs = [
+        f"{OUT_PREFIX}.frq",
+        f"{OUT_PREFIX}.idepth",
+        f"{OUT_PREFIX}.ldepth.mean",
+        f"{OUT_PREFIX}.lqual",
+        f"{OUT_PREFIX}.imiss",
+        f"{OUT_PREFIX}.lmiss",
+        f"{OUT_PREFIX}.het",
+        f"{PLOT_DIR}/variants_statistics.png"
+    ]
+    targets += stats_outputs
+
+if RUN_FILTER:
+    targets.append(DERIVED["NORM_BCF"])
+
+rule all:
+    input: targets
