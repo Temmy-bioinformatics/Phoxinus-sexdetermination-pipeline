@@ -1,8 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in line 125 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
-Missing input files for rule all:
-    affected files:
-        results/SNP_Gwas/GWAS/RhinePhoxinus/RhinePhoxinus_gemma.log
-        results/SNP_Gwas/GWAS/RhinePhoxinus/output/RhinePhoxinus_GEMMA.assoc.txt
-        results/SNP_Gwas/GWAS/DanubeCsikii/DanubeCsikii_gemma.log
-        results/SNP_Gwas/GWAS/DanubeCsikii/output/DanubeCsikii_GEMMA.assoc.txt

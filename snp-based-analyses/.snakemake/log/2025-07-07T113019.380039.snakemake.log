@@ -1,8 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in line 56 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
-Missing input files for rule all:
-    affected files:
-        results/nucleotide_diversity/DanubeCsikii/DanubeCsikii_Male_NucDiv_10kb_sex_differences.txt
-        results/nucleotide_diversity/RhinePhoxinus/RhinePhoxinus_Male_NucDiv_10kb_sex_differences.txt
-        results/nucleotide_diversity/DanubeCsikii/DanubeCsikii_Female_NucDiv_10kb_sex_differences.txt
-        results/nucleotide_diversity/RhinePhoxinus/RhinePhoxinus_Female_NucDiv_10kb_sex_differences.txt

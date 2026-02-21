@@ -1,3 +1,0 @@
-TypeErrorin line 83 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
-'NoneType' object is not iterable
-  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 83, in <module>

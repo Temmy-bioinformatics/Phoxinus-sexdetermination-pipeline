@@ -1,9 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule run_gemma in line 55 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/04-snp-gwas.smk:
-Missing input files for rule run_gemma:
-    output: /home/toriowo/Snakemake_projects/phoxinus_sex_determination/results/SNP_Gwas/GWAS/RhinePhoxinus/output/RhinePhoxinus_GEMMA.assoc.txt
-    wildcards: species=RhinePhoxinus
-    affected files:
-        results/SNP_Gwas/Bed_files/RhinePhoxinus/RhinePhoxinus.bim
-        results/SNP_Gwas/Bed_files/RhinePhoxinus/RhinePhoxinus.bed
-        results/SNP_Gwas/Bed_files/RhinePhoxinus/RhinePhoxinus.fam

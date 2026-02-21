@@ -1,4 +1,0 @@
-WorkflowErrorin line 27 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
-Failed to open source file /home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/pi.smk
-FileNotFoundError: [Errno 2] No such file or directory: '/home/toriowo/Snakemake_projects/phoxinus_sex_determination/workflow/rules/pi.smk'
-  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 27, in <module>

@@ -1,7 +1,0 @@
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Weser_AM08.Phoxinus.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Weser_AM11.Phoxinus.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Weser_AM14.Phoxinus.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Weser_AM15.Phoxinus.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Emmer_ZFMK-TIS-66632.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Emmer_ZFMK-TIS-66635.bam
-/share/pool/toriowo/Resources/20240805_Bam_files_reheadered/Reheadered_new/Emmer_ZFMK-TIS-66638.bam

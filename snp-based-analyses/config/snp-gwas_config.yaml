@@ -1,6 +1,0 @@
-PROJECT_DIR: "/home/toriowo/SNAKEMAKE/SexDetermination_snakemake"
-INPUT_VCF_DIR: "resources/sample_lists"
-BCF_DIR: "resources/bcf_files"
-OUTPUT_DIR: "results"
-SAMPLE_LIST_DIR: "resources/sample_lists"
-THREADS: 4

@@ -1,8 +1,0 @@
-name: vcftools
-channels:
-  - bioconda
-  - conda-forge
-  - defaults
-dependencies:
-  - vcftools
-  - python  # vcftools may require python, or you can specify a particular python version if needed

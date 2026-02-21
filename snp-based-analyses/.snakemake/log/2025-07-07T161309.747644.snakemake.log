@@ -1,3 +1,0 @@
-NameErrorin line 55 of /home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile:
-name 'run_kmer_gwas' is not defined
-  File "/home/toriowo/Snakemake_projects/phoxinus_sex_determination/Snakefile", line 55, in <module>
