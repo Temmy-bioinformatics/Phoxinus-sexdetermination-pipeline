@@ -1,8 +1,0 @@
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Danube_ZFMK-TIS-66623.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Main_Lauer-AM46.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Danube_ZFMK-TIS-66626.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Main_Lauer-AM45.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Danube_ZFMK-TIS-66624.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Main_Lauer-AM37.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Danube_ZFMK-TIS-66620.Phoxinus.bam
-/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/DanubeCsikii/Neckar_ZFMK-TIS-80581.Phoxinus.bam

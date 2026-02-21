@@ -1,5 +1,0 @@
-name: BEDTOOLS_ENV
-channels:
-  - bioconda
-dependencies:
-  - bedtools=2.29.2
