@@ -1,0 +1,15 @@
+name: kmer_gwas
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - kmc
+  - abyss
+  - blast
+  - plink
+  - python
+  - pandas
+  - snakemake
+  - pip
+  - pip:
+      - numpy

@@ -1,0 +1,187 @@
+# master.smk
+import sys
+import os
+
+# Load config
+configfile: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/k-mer-based-analyses/config/config.yaml"
+
+# Species list (allow single species or list)
+species_list = config.get("SPECIES")
+if isinstance(species_list, str):
+    species_list = [species_list]
+
+# Gender list
+genders = ["Male", "Female"]
+
+# Paths from config
+REFERENCE = config.get("REFERENCE")
+SOURCE_DIRECTORY = config["SOURCE_DIRECTORY"]
+
+# Load toggles from config or set defaults
+RUN_FILES_PREP = config.get("RUN_FILES_PREP", False)
+RUN_KMC = config.get("RUN_KMC", False)
+RUN_STRAND_INFO = config.get("RUN_STRAND_INFO", False)
+RUN_LIST_KMERS = config.get("RUN_LIST_KMERS", False)
+RUN_KINSHIP_TABLE = config.get("RUN_KINSHIP_TABLE", False)
+RUN_KMER_GWAS = config.get("RUN_KMER_GWAS", False)
+RUN_BLAST_KMERS = config.get("RUN_BLAST_KMERS", False)
+RUN_PLOT_RESULTS = config.get("RUN_PLOT_RESULTS", False)
+
+print("=" * 50, file=sys.stderr)
+print("Active modules:", file=sys.stderr)
+print(f"  Files Prep: {RUN_FILES_PREP}", file=sys.stderr)
+print(f"  KMC: {RUN_KMC}", file=sys.stderr)
+print(f"  Strand Info: {RUN_STRAND_INFO}", file=sys.stderr)
+print(f"  List kmers: {RUN_LIST_KMERS}", file=sys.stderr)
+print(f"  Kinship: {RUN_KINSHIP_TABLE}", file=sys.stderr)
+print(f"  GWAS: {RUN_KMER_GWAS}", file=sys.stderr)
+print(f"  Blast: {RUN_BLAST_KMERS}", file=sys.stderr)
+print(f"  Plot Results: {RUN_PLOT_RESULTS}", file=sys.stderr)
+print("=" * 50, file=sys.stderr)
+
+# Function to determine sample gender
+def get_sample_gender(sample):
+    """Determine if sample is Male or Female based on source directory"""
+    male_path = os.path.join(SOURCE_DIRECTORY, species_list[0], "Male", f"{sample}_1.fq.gz")
+    female_path = os.path.join(SOURCE_DIRECTORY, species_list[0], "Female", f"{sample}_1.fq.gz")
+    
+    if os.path.exists(male_path):
+        return "Male"
+    elif os.path.exists(female_path):
+        return "Female"
+    else:
+        raise FileNotFoundError(f"Sample {sample} not found in Male or Female directories")
+
+# Dynamically gather sample names
+def get_samples():
+    samples = []
+    for gender in genders:
+        gender_path = os.path.join(SOURCE_DIRECTORY, species_list[0], gender)
+        if os.path.exists(gender_path):
+            fq_files = [f for f in os.listdir(gender_path) if f.endswith("_1.fq.gz")]
+            samples.extend([f.replace("_1.fq.gz", "") for f in fq_files])
+        else:
+            print(f"Warning: Directory not found: {gender_path}", file=sys.stderr)
+    
+    samples = list(set(samples))
+    sample_preview = ', '.join(samples[:5])
+    if len(samples) > 5:
+        sample_preview += "..."
+    print(f"Found {len(samples)} samples: {sample_preview}", file=sys.stderr)
+    
+    if not samples:
+        error_msg = f"No samples found in {SOURCE_DIRECTORY}/{species_list[0]}/Male or Female"
+        raise ValueError(error_msg)
+    
+    return samples
+
+SAMPLES = get_samples()
+
+# Include snakefiles conditionally
+if RUN_FILES_PREP:
+    include: "workflow/rules/01_files_prep.smk"
+if RUN_KMC:
+    include: "workflow/rules/02_kmc.smk"
+if RUN_STRAND_INFO:
+    include: "workflow/rules/03_strand_info.smk"
+if RUN_LIST_KMERS:
+    include: "workflow/rules/04_list_kmers.smk"
+if RUN_KINSHIP_TABLE:
+    include: "workflow/rules/05_kinship_table.smk"
+if RUN_KMER_GWAS:
+    include: "workflow/rules/06_kmer_gwas.smk"
+if RUN_BLAST_KMERS:
+    include: "workflow/rules/07_blast_kmers.smk"
+if RUN_PLOT_RESULTS:
+    include: "workflow/rules/09_plot_results.smk"
+
+# Compose final outputs per module
+final_outputs = []
+
+if RUN_FILES_PREP:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs += expand(
+        os.path.join(project_dir, species, "{sample}", "{sample}_{read}.fq.gz"),
+        sample=SAMPLES,
+        read=[1, 2]
+    )
+
+if RUN_KMC:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs += expand(
+        os.path.join(project_dir, species, "{sample}", "output_kmc_{type}.kmc_pre"),
+        sample=SAMPLES,
+        type=["canon", "all"]
+    )
+
+if RUN_STRAND_INFO:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs += expand(
+        os.path.join(project_dir, species, "{sample}", "kmers_with_strand"),
+        sample=SAMPLES
+    )
+
+if RUN_LIST_KMERS:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs.append(os.path.join(project_dir, species, "kmers_list_paths_final.txt"))
+    final_outputs.append(os.path.join(project_dir, species, "dirlist.txt"))
+    final_outputs.append(os.path.join(project_dir, species, "kmers_to_use"))
+
+if RUN_KINSHIP_TABLE:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs.append(os.path.join(project_dir, species, "kmers_table.table"))
+    final_outputs.append(os.path.join(project_dir, species, "kmers_table.kinship"))
+
+if RUN_KMER_GWAS:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs.append(os.path.join(project_dir, species, "kmers.assoc"))
+    final_outputs.append(os.path.join(project_dir, species, "kmers.assoc.tab"))
+
+if RUN_BLAST_KMERS:
+    project_dir = config['PROJECT_DIR']
+    species = species_list[0]
+    final_outputs.extend([
+        os.path.join(project_dir, species, "assoc_kmers_presab.txt"),
+        os.path.join(project_dir, species, "plink_abyss_input.txt"),
+        os.path.join(project_dir, species, "plink_abyss_output.txt"),
+        os.path.join(project_dir, species, "blast", "kmers_blast.out")
+    ])
+
+if RUN_PLOT_RESULTS:
+    project_dir = config["PROJECT_DIR"]
+    species = config["SPECIES"]  # using config['SPECIES']
+    
+    # Individual plots (PNG, PDF, SVG)
+    for ext in ["png", "pdf", "svg"]:
+        final_outputs.append(
+            os.path.join(
+                project_dir,
+                species,
+                "plots",
+                f"{species}_kmer_counts_per_chr.{ext}"
+            )
+        )
+    
+    # Summary table
+    final_outputs.append(
+        os.path.join(
+            project_dir,
+            species,
+            "plots",
+            f"{species}_kmer_blast_mapping_summary.csv"
+        )
+    )
+
+# Check that at least one module is enabled
+if not final_outputs:
+    raise ValueError("No modules enabled! Set at least one RUN_* flag to True in config.yaml")
+
+rule all:
+    input:
+        final_outputs

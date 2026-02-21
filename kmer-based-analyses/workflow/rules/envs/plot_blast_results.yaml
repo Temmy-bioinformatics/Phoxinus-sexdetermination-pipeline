@@ -1,0 +1,30 @@
+name: r-plots_env
+channels:
+  - conda-forge
+  - bioconda
+  
+dependencies:
+  # R base
+  - r-base=4.3
+
+  # Core tidyverse packages
+  - r-tidyverse
+  - r-dplyr
+  - r-tidyr
+  - r-readr
+  - r-stringr
+  - r-ggplot2
+  - r-tibble
+  - r-purrr
+  - r-forcats
+  - r-lubridate
+
+  # Plotting packages
+  - r-cowplot      # For plot_grid (combining plots)
+  - r-scales       # For comma formatting in plots
+  - r-ggpubr       # Additional plotting utilities
+  - r-patchwork    # Alternative plot composition
+  - r-svglite
+
+  # Data manipulation
+  - r-tidyselect
