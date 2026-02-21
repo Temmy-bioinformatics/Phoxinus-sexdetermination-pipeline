@@ -1,0 +1,19 @@
+# Root project directory (optional, can be used for absolute referencing)
+PROJECT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses"
+
+# Directory containing per-species BCF files
+BCF_DIR: "/share/pool/toriowo/Resources/Sex_Determination/sex-determination-snakemake"
+
+# Directory containing *.vcflist sample lists
+SAMPLE_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/resources/sample_lists"
+
+# List of all vcflist files used in this analysis
+VCF_LISTS:
+  - SeinePhoxinus_Male.vcflist
+  - SeinePhoxinus_Female.vcflist
+
+# Output directory for nucleotide diversity results
+OUTPUT_BASE_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/results"
+
+# Number of threads to use
+THREADS: 4

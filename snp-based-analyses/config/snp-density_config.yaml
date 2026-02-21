@@ -1,0 +1,24 @@
+# Project root directory (optional, can be ".")
+PROJECT_DIR: "/home/toriowo/SNAKEMAKE/SexDetermination_snakemake"
+
+# Directory containing the filtered BCF files per species
+BCF_DIR: "/share/pool/toriowo/Resources/Sex_Determination/sex-determination-snakemake"
+
+# Directory containing sample lists for each species and gender
+SAMPLE_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/resources/sample_lists"
+
+# List of VCF list files; filenames must follow <species>_<gender>.vcflist format
+VCF_LISTS:
+  - SeinePhoxinus_Male.vcflist
+  - SeinePhoxinus_Female.vcflist
+
+# Number of threads to use for multithreaded tools
+THREADS: 4
+
+# Output base directory for generated files (individual BCFs and SNP density)
+OUTPUT_DIR: "/home/toriowo/Snakemake_projects/sexfindr-snakemake/snp-based-analyses/results"
+
+# List of species to include (must match species names in BCF_DIR and SAMPLE_DIR)
+SPECIES:
+  - SeinePhoxinus
+

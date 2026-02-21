@@ -1,0 +1,9 @@
+name: bcf_snpden_env
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - bcftools
+  - vcftools
+  - htslib
+  - python # to run python in Snakemake if needed

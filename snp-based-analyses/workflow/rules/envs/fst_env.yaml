@@ -1,0 +1,8 @@
+name: fst_env
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - vcftools
+  - bcftools
+  - htslib

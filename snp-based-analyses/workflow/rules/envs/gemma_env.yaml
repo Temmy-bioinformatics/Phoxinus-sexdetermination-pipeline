@@ -1,0 +1,10 @@
+name: gemma_env
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - plink
+  - gemma
+  - bcftools
+  - htslib
+  - python=3.10

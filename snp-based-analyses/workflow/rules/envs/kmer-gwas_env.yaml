@@ -1,0 +1,17 @@
+name: kmer_gwas_env
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python=3.10
+  - bcftools=1.19
+  - vcftools=0.1.16
+  - kmc=3.2.1
+  - plink=1.90b6.16
+  - blast=2.13.0
+  - abyss=2.3.7
+  - pandas
+  - numpy
+  - pip
+  - pip:
+  - biopython

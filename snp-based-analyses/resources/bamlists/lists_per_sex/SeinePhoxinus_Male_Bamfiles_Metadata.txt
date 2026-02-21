@@ -1,0 +1,7 @@
+/share/pool/toriowo/Resources/bam_repository/202501_bams/Ornain_ZFMK-TIS-80162.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202501_bams/Ornain_ZFMK-TIS-80165.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202501_bams/Ornain_ZFMK-TIS-80166.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202309_bams/Romanee_ZFMK-TIS-80019.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202309_bams/Romanee_ZFMK-TIS-80020.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202501_bams/Romanee_ZFMK-TIS-80022.Phoxinus.bam
+/share/pool/toriowo/Resources/bam_repository/202309_bams/Romanee_ZFMK-TIS-80027.Phoxinus.bam

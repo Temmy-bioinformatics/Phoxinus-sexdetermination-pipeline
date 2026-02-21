@@ -1,0 +1,9 @@
+# Directory containing *.vcflist files for each species
+SAMPLE_LIST_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/resources/sample_lists"
+
+# Directory containing BCF files for all species
+#BCF_DIR: "resources/bcf_files"
+BCF_DIR: "/share/pool/toriowo/Resources/Sex_Determination/sex-determination-snakemake"
+
+# Directory to write final FST results
+OUTPUT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/results/fst"

@@ -1,0 +1,66 @@
+#####################################
+# GLOBAL PARAMETERS
+#####################################
+PROJECT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses"
+OUTPUT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/results"
+THREADS: 4
+
+#####################################
+# ANALYSIS FLAGS
+#####################################
+RUN_FST: false
+RUN_NUC_DIV: false
+RUN_EXTRACT_BCF: false
+RUN_SNP_DENSITY: false
+RUN_SNP_GWAS: false
+RUN_PLOTTING: true
+
+#####################################
+# SPECIES AND SAMPLE INFO
+#####################################
+SPECIES:
+  - SeinePhoxinus
+
+SAMPLE_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/resources/sample_lists"
+
+VCF_LISTS:
+  - SeinePhoxinus_Male.vcflist
+  - SeinePhoxinus_Female.vcflist
+
+#####################################
+# SNP/BCF ANALYSIS SETTINGS
+#####################################
+BCF_DIR: "/share/pool/toriowo/Resources/Sex_Determination/sex-determination-snakemake"
+INDV_BCF_DIR: "/share/pool/toriowo/Resources/Sex_Determination/sex-determination-snakemake"
+
+#####################################
+# KMER GWAS PARAMETERS
+#####################################
+FASTQ_DIRECTORY: "/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Fastq_Files_List"
+TOOLS_DIR: "/share/pool/CompGenomVert/Applications/kmersGWAS/bin"
+KMER_LENGTH: 31
+MAC: 2
+MAF: 0.05
+BLOCK_SIZE: 10000
+PHENO_DIR: "/home/toriowo/SNAKEMAKE/SexDetermination_snakemake/data/pheno_files"
+
+#####################################
+# REFERENCE GENOME
+#####################################
+REFERENCE: "/home/toriowo/Projects/archived-projects/Phoxy_popgen/Final_Phoxy_1_rearranged.fasta"
+ref_file: "resources/reference/Final_Phoxy_1_rearranged.fasta.fai"
+
+#####################################
+# R SCRIPT LOCATIONS
+#####################################
+fst_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/plot_fst.R"
+extract_fst_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/extract_top_fst.R"
+gwas_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/plot_snp-gwas.R"
+snp_density_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/plot_snp-density.R"
+nuc_diversity_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/plot_pi.R"
+integrated_analysis_rscript: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/r-scripts/sexfindr-combined-plot.R"
+
+#####################################
+# PYTHON UTILITIES
+#####################################
+count_window: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/workflow/scripts/window_count.py"

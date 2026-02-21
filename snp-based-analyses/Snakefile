@@ -1,0 +1,289 @@
+import os
+import sys
+
+# ─────────────────────────────────────────────────────────────
+# Load configuration
+# ─────────────────────────────────────────────────────────────
+configfile: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/snp-based-analyses/config/config.yaml"
+
+species_list = config.get("SPECIES", [])
+if isinstance(species_list, str):
+    species_list = [species_list]
+
+genders = ["Male", "Female"]
+
+sample_dir = config["SAMPLE_DIR"]
+vcf_lists = config["VCF_LISTS"]
+output_dir = config["OUTPUT_DIR"]
+
+# Flags to toggle modules
+run_fst = config.get("RUN_FST", False)
+run_nuc_div = config.get("RUN_NUC_DIV", False)
+run_extract_bcf = config.get("RUN_EXTRACT_BCF", False)
+run_snp_density = config.get("RUN_SNP_DENSITY", False)
+run_snp_gwas = config.get("RUN_SNP_GWAS", False)
+run_combined_plots = config.get("RUN_PLOTTING", False)
+
+# Print active modules
+print("Running modules:", file=sys.stderr)
+print(
+    f"FST: {run_fst}, NucDiv: {run_nuc_div}, Extract BCF: {run_extract_bcf}, "
+    f"SNP Density: {run_snp_density}, SNP GWAS: {run_snp_gwas}, Plotting: {run_combined_plots}",
+    file=sys.stderr,
+)
+
+# ─────────────────────────────────────────────────────────────
+# Include rule files conditionally
+# ─────────────────────────────────────────────────────────────
+if run_fst:
+    include: "workflow/rules/01-fst.smk"
+if run_nuc_div:
+    include: "workflow/rules/02-pi.smk"
+if run_extract_bcf:
+    include: "workflow/rules/03-extract-sample-bcf.smk"
+if run_snp_density:
+    include: "workflow/rules/04-run-snp-density.smk"
+if run_snp_gwas:
+    include: "workflow/rules/05-snp-gwas.smk"
+if run_combined_plots:
+    include: "workflow/rules/06-plot-results.smk"
+
+# ─────────────────────────────────────────────────────────────
+# Helper: parse samples from VCF list files
+# ─────────────────────────────────────────────────────────────
+def get_samples(vcf_lists, gender):
+    samples = {}
+    for vcf_list in vcf_lists:
+        sp, ext = vcf_list.rsplit("_", 1)
+        vcf_gender = ext.split(".")[0]
+        if vcf_gender == gender:
+            with open(os.path.join(sample_dir, vcf_list)) as fh:
+                samples[sp] = [line.strip() for line in fh if line.strip()]
+    return samples
+
+male_samples_dict = get_samples(vcf_lists, "Male")
+female_samples_dict = get_samples(vcf_lists, "Female")
+
+samples_dict = {
+    sp: {"Male": male_samples_dict.get(sp, []), "Female": female_samples_dict.get(sp, [])}
+    for sp in set(f.split("_")[0] for f in vcf_lists)
+}
+
+# ─────────────────────────────────────────────────────────────
+# Validate sample lists (fail fast)
+# ─────────────────────────────────────────────────────────────
+for sp, d in samples_dict.items():
+    for g in genders:
+        if any(not s for s in d[g]):
+            raise ValueError(f"Empty sample name detected for {sp} {g}")
+
+# ─────────────────────────────────────────────────────────────
+# Define final output targets
+# ─────────────────────────────────────────────────────────────
+final_outputs = []
+
+# ═════════════════════════════════════════════════════════════
+# FST outputs
+# ═════════════════════════════════════════════════════════════
+if run_fst:
+    # Per-SNP FST
+    final_outputs += expand(
+        os.path.join(output_dir, "fst", "{species}", "{species}_Fst.txt.weir.fst"),
+        species=species_list,
+    )
+
+    # 10kb windowed FST
+    final_outputs += expand(
+        os.path.join(output_dir, "fst", "{species}", "{species}_Fst_10k.windowed.weir.fst"),
+        species=species_list,
+    )
+
+    # Top 5% FST SNPs (unsorted)
+    final_outputs += expand(
+        os.path.join(output_dir, "fst", "{species}", "{species}_all_Fst_sort_cut.txt"),
+        species=species_list,
+    )
+
+    # Top 5% FST SNPs (coordinate-sorted)
+    final_outputs += expand(
+        os.path.join(output_dir, "fst", "{species}", "{species}_coordinated_sorted_Fst_cut.txt"),
+        species=species_list,
+    )
+
+    # Window counts for top 5% FST SNPs
+    final_outputs += expand(
+        os.path.join(output_dir, "fst", "{species}", "{species}_Fst_window_count.txt"),
+        species=species_list,
+    )
+
+    # ────────────────
+    # FST combined_plots outputs (ATTACHED HERE)
+    # ────────────────
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "{species}_Fst_10k_plot.tiff"),
+        species=species_list,
+    )
+
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "{species}_Fst_10k_thresholds.txt"),
+        species=species_list,
+    )
+
+# ═════════════════════════════════════════════════════════════
+# Nucleotide diversity (pi) outputs
+# ═════════════════════════════════════════════════════════════
+if run_nuc_div:
+    # Windowed pi for each gender
+    final_outputs += expand(
+        os.path.join(output_dir, "pi", "{species}", "{species}_{gender}_10k_nucleotide_diversity.windowed.pi"),
+        species=species_list,
+        gender=genders,
+    )
+    
+    # Sex difference plots (created by plot_nucleotide_diversity rule)
+    final_outputs += expand(
+        os.path.join(output_dir, "pi", "{species}", "{species}_pi_10kb_window.tiff"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(output_dir, "pi", "{species}", "{species}_var_per_10kb_window.tiff"),
+        species=species_list,
+    )
+    
+    # Sex difference table
+    final_outputs += expand(
+        os.path.join(output_dir, "pi", "{species}", "{species}_NucDiv_10kb_sex_differences.txt"),
+        species=species_list,
+    )
+
+# ═════════════════════════════════════════════════════════════
+# Individual BCF outputs
+# ═════════════════════════════════════════════════════════════
+if run_extract_bcf:
+    indv_bcf_dir = config["INDV_BCF_DIR"]
+    for gender, sample_dict in [("Male", male_samples_dict), ("Female", female_samples_dict)]:
+        for species in species_list:
+            if species in sample_dict and sample_dict[species]:
+                final_outputs += expand(
+                    os.path.join(indv_bcf_dir, "{species}", gender, "{sample}.bcf"),
+                    species=[species],
+                    sample=sample_dict[species],
+                )
+
+# ═════════════════════════════════════════════════════════════
+# SNP density outputs
+# ═════════════════════════════════════════════════════════════
+if run_snp_density:
+    snp_density_dir = os.path.join(output_dir, "snpdensity")
+    
+    # Individual SNP density files for each sample
+    for species in species_list:
+        for gender in genders:
+            for sample in samples_dict[species][gender]:
+                final_outputs.append(
+                    os.path.join(snp_density_dir, species, f"{gender}_{sample}_10k.snpden")
+                )
+    
+    # SNP density plots and tables (created by plot_snp_density rule)
+    final_outputs += expand(
+        os.path.join(snp_density_dir, "{species}", "plot", "{species}_proportion_p001.pdf"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(snp_density_dir, "{species}", "plot", "{species}_SNPdensity_SexFindR.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(snp_density_dir, "{species}", "plot", "{species}_significant_SNPdensity_SexFindR.txt"),
+        species=species_list,
+    )
+
+# ═════════════════════════════════════════════════════════════
+# SNP GWAS outputs
+# ═════════════════════════════════════════════════════════════
+if run_snp_gwas:
+    pheno_output_dir = os.path.join(output_dir, "snp_gwas", "pheno_files")
+    bed_output_dir = os.path.join(output_dir, "snp_gwas", "bed_files")
+    gwas_output_dir = os.path.join(output_dir, "snp_gwas", "gwas")
+
+    # Phenotype files
+    final_outputs += expand(
+        os.path.join(pheno_output_dir, "{species}", "{species}.pheno.txt"),
+        species=species_list,
+    )
+    
+    # PLINK bed/bim/fam files
+    final_outputs += expand(
+        os.path.join(bed_output_dir, "{species}", "{species}.{ext}"),
+        species=species_list,
+        ext=["bed", "bim", "fam"],
+    )
+    
+    # GEMMA association results
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_gemma.assoc.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_gemma.log"),
+        species=species_list,
+    )
+    
+    # GWAS plots and top SNPs (created by plot_gwas rule)
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_GWAS.tiff"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_gwas_plot_values.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_GWAS_out_sort_cut.txt"),
+        species=species_list,
+    )
+    
+    # Sorted top GWAS SNPs
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_coordinated_sorted_GWAS_cut.txt"),
+        species=species_list,
+    )
+    
+    # Window counts for top GWAS SNPs
+    final_outputs += expand(
+        os.path.join(gwas_output_dir, "{species}", "output", "{species}_GWAS_window_count.txt"),
+        species=species_list,
+    )
+
+# ═════════════════════════════════════════════════════════════
+# Integrated combined_plots outputs (requires all modules)
+# ═════════════════════════════════════════════════════════════
+if run_combined_plots:
+    # Integrated analysis combining FST, GWAS, SNP density, and Pi
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "candidate_windows_SNP_GWAS_Fst_pi.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "candidate_windows_GWAS_Pi_Fst.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "candidate_windows_SNP_Fst_Pi.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "{species}_correlation_rankings.txt"),
+        species=species_list,
+    )
+    final_outputs += expand(
+        os.path.join(output_dir, "combined_plots", "{species}", "{species}_integrated_plot.png"),
+        species=species_list,
+    )
+
+# ─────────────────────────────────────────────────────────────
+# Rule: all
+# ─────────────────────────────────────────────────────────────
+rule all:
+    input:
+        final_outputs

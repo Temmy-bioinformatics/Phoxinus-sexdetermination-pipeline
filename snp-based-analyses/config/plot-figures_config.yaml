@@ -1,0 +1,22 @@
+species:
+  - SeinePhoxinus
+
+threads: 4
+
+# Paths to base directories
+base_fst_dir: "../results/fst"
+base_gwas_dir: "../results/snp_gwas"
+base_snpdensity_dir: "../results/snpdensity"
+base_nuc_diversity_dir: "../results/pi"
+
+# Common reference file (e.g., genome index or chrom sizes file)
+ref_file: "resources/reference/Final_Phoxy_1_rearranged.fasta.fai"
+
+# Scripts for each analysis
+fst_rscript: "scripts/r-scripts/plot_fst.r"
+gwas_rscript: "scripts/r-scripts/plot_snp-gwas.r"
+snpdensity_rscript: "scripts/r-scripts/plot_snp-density.r"
+nuc_diversity_rscript: "scripts/r-scripts/plot_pi.r"
+
+# Python script to count SNPs per window
+count_window: "scripts/count_windows.py"
