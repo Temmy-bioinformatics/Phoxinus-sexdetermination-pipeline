@@ -1,0 +1,5 @@
+name: BEDTOOLS_ENV
+channels:
+  - bioconda
+dependencies:
+  - bedtools

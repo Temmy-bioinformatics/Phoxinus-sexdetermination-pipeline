@@ -1,0 +1,12 @@
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Agger_ZFMK-TIS-65468.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Agger_ZFMK-TIS-65486.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Agger_ZFMK-TIS-65487.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Agger_ZFMK-TIS-66086.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Naafbach_ZFMK-TIS-66030.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Naafbach_ZFMK-TIS-66046.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Naafbach_ZFMK-TIS-66047.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Agger_ZFMK-TIS-66336.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Anger_ZFMK-TIS-80141.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Mouzon_ZFMK-TIS-80148.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Mouzon_ZFMK-TIS-80150.Phoxinus.bam
+/share/pool/toriowo/Resources/Sex_Determination/Combined_Metadata/Haplotype_1_bams/RhinePhoxinus/Suelz_ZFMK-TIS-66168.Phoxinus.bam

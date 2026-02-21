@@ -1,0 +1,19 @@
+# config.yaml
+
+# Paths
+PROJECT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/coverage-based-analyses"
+MERGED_BAM_DIR: "/share/pool/toriowo/Resources/Sex_Determination/Merged_Bams"
+SCRIPTS_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/coverage-based-analyses/workflow/scripts/difcover_scripts"
+OUTPUT_DIR: "/home/toriowo/PROJECTS/sex-determination-pipeline/code/job-scripts/coverage-based-analyses/results"
+
+SPECIES:
+  - SeinePhoxinus
+
+# Rule Toggles
+RUN_SAMTOOLS_STATS: False
+RUN_MULTIQC: False
+RUN_MERGE_BAMS: False
+RUN_COV_STATS: False
+RUN_DIFCOVER: False
+RUN_DNACOPY: False
+RUN_DNACOPY_PLOT: True
